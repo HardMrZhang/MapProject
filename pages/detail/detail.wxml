@@ -1,0 +1,39 @@
+<view>
+	<map
+	 id="map"
+	 class="map"
+	 markers="{{markers}}"
+	 longitude="{{poi.longitude}}"
+	 latitude="{{poi.latitude}}"
+	 scale='16'
+	 bindmarkertap="showPopup"
+	>
+	</map>
+	<van-popup
+	 show="{{ show }}"
+	 bind:close="onClose"
+	 position="bottom"
+	>
+		<van-row>
+			<van-col span="16">
+				<van-cell
+				 title="{{t}}"
+				 label="{{a}}"
+				 border="{{ false }}"
+				/>
+			</van-col>
+			<van-col span="8" class="col">
+				<van-image
+				 class="imgae"
+				 bindtap="getDirectionEvent"
+				 round
+				 width="5rem"
+				 height="5rem"
+				 src="/static/images/daohang.png"
+				/>
+			</van-col>
+		</van-row>
+
+	</van-popup>
+</view>
+

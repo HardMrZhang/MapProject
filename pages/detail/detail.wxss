@@ -1,0 +1,10 @@
+.map{
+    width: 100%;
+    height: 1000px;
+}
+.col{
+    text-align: center;
+}
+.imgae{
+    margin-top: 1rem;
+}

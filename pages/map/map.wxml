@@ -1,0 +1,115 @@
+<!--pages/map.wxml-->
+<view class='view'>
+	<!--搜索框-->
+	<van-search bindtap="onChange" />
+	<!--绑定点击事件-->
+	<view
+	 class="selectTag"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<van-row>
+			<van-col span="4">
+				<van-tag
+				 round
+				 size="large"
+				 type="success"
+				 bindtap="getWenHuaGuanMark"
+				>文化馆
+				</van-tag>
+			</van-col>
+			<van-col span="4">
+				<van-tag
+				 round
+				 size="large"
+				 type="success"
+				 bindtap="getJiuDianMark"
+				>酒店
+				</van-tag>
+			</van-col>
+			<van-col span="4">
+				<van-tag
+				 size="large"
+				 round
+				 type="success"
+				 bindtap="getJingQuMark"
+				>景区
+				</van-tag>
+			</van-col>
+			<van-col span="4">
+				<van-tag
+				 size="large"
+				 round
+				 type="success"
+				 bindtap="getShangChangMark"
+				>商场
+				</van-tag>
+			</van-col>
+			<!-- <van-col span="4">
+				<van-tag
+				 size="large"
+				 round
+				 type="success"
+				 bindtap="getCangTingMark"
+				>餐厅
+				</van-tag>
+			</van-col> -->
+			<van-col span="4">
+				<van-tag
+				 size="large"
+				 round
+				 type="success"
+				 bindtap="getTuShuGuanMark"
+				>图书馆
+				</van-tag>
+			</van-col>
+		</van-row>
+	</view>
+	<!-- <button bindtap="nearby_search">搜索周边KFC</button> -->
+	<!--地图容器-->
+	<!-- <map
+	 id="map"
+	 class="map"
+	 markers="{{markers}}"
+	 longitude="{{longitude}}"
+	 latitude="{{latitude}}"
+	 scale='16'
+	>
+	</map> -->
+	<map
+	 id="map"
+	 class="map"
+	 markers="{{markers}}"
+	 longitude="{{poi.longitude}}"
+	 latitude="{{poi.latitude}}"
+	 scale='14'
+	 bindmarkertap="showPopup1"
+	 show-location
+	>
+	</map>
+	<van-popup
+	 show="{{ show }}"
+	 bind:close="onClose"
+	 position="bottom"
+	>
+		<van-row>
+			<van-col span="16">
+				<van-cell
+				 title="{{t}}"
+				 label="{{a}}"
+				 border="{{ false }}"
+				/>
+			</van-col>
+			<van-col span="8" class="col">
+				<van-image
+				 class="imgae"
+				 width="5rem"
+				 height="5rem"
+				 src="{{ imgSrc }}"
+				/>
+			</van-col>
+		</van-row>
+
+	</van-popup>
+</view>
+
